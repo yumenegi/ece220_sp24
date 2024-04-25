@@ -65,8 +65,10 @@ class Train : public Vehicle{
 class City{
     private:
         list<Vehicle*> vlist;
+        const char *name;
     public:
-        City(){ }
+        City(const char *name_)
+            :name(name_) { }
         void AddVehicle(Vehicle *v){
             vlist.push_back(v);
         }
@@ -74,6 +76,9 @@ class City{
             list<Vehicle*>::iterator it;
             for(it=vlist.begin() ; it != vlist.end(); it++)
                 (*it)->ShowData();
+        }
+        City oeprator+ (City A, City B) {
+            
         }
 };
 int main(){
